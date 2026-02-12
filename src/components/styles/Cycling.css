@@ -1,0 +1,119 @@
+.cycling {
+  background-color: var(--dark-gray-1);
+}
+
+.cycling-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cycling-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.cycling-card {
+  background-color: var(--dark-gray-2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cycling-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cycling-card .card-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cycling-card .card-metadata {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+  flex-wrap: wrap;
+  backdrop-filter: blur(4px);
+}
+
+.cycling-card .metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.cycling-card .metadata-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.cycling-card .card-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+}
+
+.cycling-card .card-content {
+  padding: 30px;
+}
+
+.cycling-card .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.cycling-card .card-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 968px) {
+  .cycling-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cycling-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cycling-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cycling-card .card-metadata {
+    gap: 15px;
+    padding: 12px 15px;
+  }
+
+  .cycling-card .metadata-item {
+    font-size: 12px;
+  }
+
+  .cycling-card .card-image {
+    height: 250px;
+  }
+}
